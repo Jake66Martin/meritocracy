@@ -1,8 +1,8 @@
 {
   "name": "meritocracy",
   "version": "1.0.0",
-  "description": "Meritocratic party and forum",
-  "main": "index.js",
+  "description": "Meritocratic party platform and forum",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js",
@@ -12,7 +12,7 @@
   },
   "author": "Jacob F Martin",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "concurrently": "^8.2.2"
-  }
+}
 }

@@ -1,14 +1,14 @@
 // Importing the graph ql error module from graphql library.
 const {GraphQLError} = require('graphql');
-// Importing the json web token from jwt library.
+// Importing the json web token from jwt library
 const jwt = require('jsonwebtoken');
 
 
-// Credentials for our json web token authentication.
+// Credentials for our json web token authentication
 const secret = 'ourlittlesecret';
 const expiration = '2h';
 
-// The exportation of our error and authentication functions.
+// The exportation of our error and authentication functions
 module.exports = {
     // This part of the code refers to our authentiation error, which will throw 
     // a graphql error when the user is not authenticated.

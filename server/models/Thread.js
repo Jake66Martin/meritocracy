@@ -20,6 +20,20 @@ Thread.init({
    name: {
     type: DataTypes.STRING,
     allowNull: false
+   },
+   user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+         model: 'user',
+         key: 'id'
+      }
+   },
+   comment_id: {
+      type: DataTypes.INTEGER,
+      references: {
+         model: 'comments',
+         key: 'id'
+      }
    }
 },
 {

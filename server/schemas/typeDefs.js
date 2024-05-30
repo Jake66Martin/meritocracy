@@ -4,6 +4,12 @@
 
 const typeDefs = `
 
+type User {
+    _id: ID,
+    user_name: String!,
+    email: String!,
+    password: String!
 
+}
 
 `

@@ -14,7 +14,7 @@ const {authMiddleware} = require('./utils/auth.js')
 require('dotenv').config()
 
 // This code imports our typedefs and resolvers from the schemas file
-const {typeDefs, resolvers} = require('./schemas.js')
+const {typeDefs, resolvers} = require('./schemas')
 // This line imports our database connection
 const db = require('./config/connection')
 

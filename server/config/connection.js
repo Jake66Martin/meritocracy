@@ -7,7 +7,7 @@ const Sequelize = require('sequelize')
 // db user, db password.
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
 // This line is for the database host 
-    host: process.env.DB_HOST,
+    host: 'localhost',
 // This ensures the use of mysql as db dialect    
     dialect: 'mysql',
 // Ensure decimal numbers are correctly handled    

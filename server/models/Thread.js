@@ -1,29 +1,34 @@
 // Import the necessary components from sequelize
 const { Model, DataTypes } = require('sequelize');
-// Import of bcrypt to hash passwords
-const bcrypt = require('bcrypt');
 
 // Here we import our connection file
 const sequelize = require('../config/connection');
 
-class Thread extends Model {
 
-    async beforeSave() {
-        if (this.isNew || this.isModified('password')) {
-         const saltRounds = 10;
-         this.password = await bcrypt.password(this.password, saltRounds);
-        }
-    }
-
-    async isCorrectPassword(password) {
-        return bcrypt.compare(password, this.password)
-    }
-};
+// Here we are creating a new class called user that inherits the properties
+// from the parent class of model
+class Thread extends Model {};
 
 
+// Define User model with its attributes and options (two object argument)
 Thread.init({
-
+   _id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+   },
+   name: {
+    type: DataTypes.STRING,
+    allowNull: false
+   }
 },
 {
-    
-})
+sequelize,
+timestamps: true,
+freezeTableName: true,
+underscored: true,
+modelName: 'thread'
+});
+
+// Exporting of this model
+module.exports =  Thread;

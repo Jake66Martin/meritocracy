@@ -5,9 +5,25 @@ const Comments = require('./Comments')
 
 
 User.hasMany(Thread, {
-foreignKey: ''
+foreignKey: 'user_id'
 });
 
 User.hasMany(Comments, {
-foreignKey: 'comm'
+foreignKey: 'user_id'
+});
+
+Thread.belongsTo(User, {
+foreignKey: 'user_id'
+});
+
+Thread.hasMany(Comments, {
+foreignKey: 'thread_id'    
+});
+
+Comments.belongsTo(User, {
+foreignKey: 'user_id'
+});
+
+Comments.belongsTo(Thread, {
+foreignKey: 'thread_id'
 });

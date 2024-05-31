@@ -6,7 +6,7 @@ const typeDefs = `
 
 type User {
     _id: ID,
-    user_name: String!,
+    username: String!,
     email: String!,
     password: String!
 }
@@ -24,4 +24,19 @@ type Comments {
     thread_id: ID
 }
 
+type Auth {
+    token: ID!,
+    user: User
+}
+
+type Query {
+me: User
+}
+
+type Mutation {
+    addUser(email: String!, username: String!, password: String!): Auth
+}
+
 `
+
+module.exports = typeDefs;

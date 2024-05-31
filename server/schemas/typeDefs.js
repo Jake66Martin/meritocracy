@@ -9,7 +9,19 @@ type User {
     user_name: String!,
     email: String!,
     password: String!
+}
 
+type Thread {
+    _id: ID,
+    name: String!,
+    user_id: ID
+}
+
+type Comments {
+    _id: ID,
+    comment: String!,
+    user_id: ID,
+    thread_id: ID
 }
 
 `

@@ -69,23 +69,6 @@ User.init(
         },
       },
     },
-// Id reference to the threads made by said user   
-    thread_id: {
-      type:DataTypes.INTEGER,
-      references: {
-        model: 'thread',
-        key:'id'
-      }
-    },
-
-// Id reference to the comments made by said user  
-    comment_id: {
-      type:DataTypes.INTEGER,
-      references: {
-        model:"comments",
-        key: 'id'
-      }
-    }
   },
   {
     sequelize, // Connect model to sequelize instance

@@ -11,22 +11,40 @@ class Comments extends Model {};
 
 // Define User model with its attributes and options (two object argument)
 Comments.init({
-_id: {
+// _id attribute is auto-incrementing integer and serves as primary key    
+    _id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
 },
+// Comment attribute is a string that cannot be null
 comment: {
     type: DataTypes.STRING,
     allowNull: false
+},
+// User_id references the id of the user who made the comment
+user_id: {
+    type: DataTypes.INTEGER,
+    references: {
+        model: 'user',
+        key: 'id'
+    }
+},
+// Thread_id references the id of the thread that the comment belongs to
+thread_id: {
+    type: DataTypes.INTEGER,
+    references: {
+        model: 'thread',
+        key: 'id'
+    }
 }
 },
 {
-sequelize,
-timestamps: true,
-freezeTableName: true,
-underscored: true,
-modelName: 'comments'
+sequelize, // Connect model to sequelize instance
+timestamps: true,  //  Disable automatic created and updated at fields
+freezeTableName: true,  // Ensure the table name is exactly as defined
+underscored: true,  // Use snake case for automatically added attributes
+modelName: 'comments'  // Set the model name to user
 })
 
 // Exporting of this model

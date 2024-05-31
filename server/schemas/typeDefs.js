@@ -30,11 +30,15 @@ type Auth {
 }
 
 type Query {
-me: User
+me: User,
+threads(_id: ID!): [Thread]
+comments(thread_id: ID!): [Comments]
 }
 
 type Mutation {
     addUser(email: String!, username: String!, password: String!): Auth
+    createThread(name: String!, user_id: ID!): Thread
+    createComment(comment: String!, user_id: ID!, thread_id: ID!): Comment
 }
 
 `

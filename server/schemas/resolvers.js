@@ -1,0 +1,1 @@
+const { User, Thread, Comments } = require('../models/index')

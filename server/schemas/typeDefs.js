@@ -36,9 +36,9 @@ comments(thread_id: ID!): [Comments]
 
 type Mutation {
     addUser(email: String!, username: String!, password: String!): Auth
-    login(username: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
 
-    createThread(name: String!, user_id: ID!): Thread
+    createThread(name: String!): Thread
     createComment(comment: String!, user_id: ID!, thread_id: ID!): Comments
 }
 

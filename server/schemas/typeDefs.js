@@ -7,8 +7,7 @@ const typeDefs = `
 type User {
     _id: ID,
     username: String!,
-    email: String!,
-    password: String!
+    email: String!
 }
 
 type Thread {
@@ -38,7 +37,7 @@ comments(thread_id: ID!): [Comments]
 type Mutation {
     addUser(email: String!, username: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
-    
+
     createThread(name: String!, user_id: ID!): Thread
     createComment(comment: String!, user_id: ID!, thread_id: ID!): Comments
 }

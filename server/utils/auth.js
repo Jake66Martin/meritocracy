@@ -56,9 +56,9 @@ module.exports = {
      },
 
      // This function creates the jwt for a user
-     signToken: function ({email, userName, _id}) {
+     signToken: function ({email, username, _id}) {
      // This line assigns an object containing these values to payload   
-        const payload = {email, userName, _id};
+        const payload = {email, username, _id};
      // This returns a signed json web token with payload assigned to data as a new object
      // to maintain organization, the secret, and the time it expires  
         return jwt.sign({data: payload}, secret, {expiresIn: expiration})

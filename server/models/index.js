@@ -27,3 +27,6 @@ foreignKey: 'user_id'
 Comments.belongsTo(Thread, {
 foreignKey: 'thread_id'
 });
+
+
+module.exports = { User, Thread, Comments}

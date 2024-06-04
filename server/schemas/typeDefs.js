@@ -39,7 +39,7 @@ type Mutation {
     login(email: String!, password: String!): Auth
 
     createThread(name: String!): Thread
-    createComment(comment: String!, user_id: ID!, thread_id: ID!): Comments
+    createComment(comment: String!, thread_id: ID!): Comments
 }
 
 `
